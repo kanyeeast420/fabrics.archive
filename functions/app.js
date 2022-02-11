@@ -17,7 +17,7 @@ app.use(
 );
 
 router.get("/", async (req, res) => {
-  const ip = req.connection.remoteAddress;
+  const ip = req.socket.remoteAddress;
 
   res.json({
     ok: true,
