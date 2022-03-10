@@ -14,11 +14,13 @@ export const Header: React.FC<Header> = ({}) => {
   });
 
   return (
-    <div className="fixed flex h-16 w-full items-center justify-between bg-background bg-opacity-20 overflow-hidden pl-5 pr-5 backdrop-blur-md z-10">
+    <div className="bg-background fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-opacity-20 pr-5 pl-5 backdrop-blur-md">
       <div className="left flex flex-row">
         <Link href={`/`} as={`/`}>
           <a>
-            <span className="text-2xl font-bold">FABRICS.ARCHIVE</span>
+            <span className="text-2xl font-bold">
+              FABRICS.ARCHIVE 🌍 [{itemCount}]
+            </span>
           </a>
         </Link>
       </div>

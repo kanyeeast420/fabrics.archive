@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    if (typeof req.body.wishName !== "string") {
+    if (typeof req.body.name !== "string") {
       throw new Error("bad input");
     }
 
@@ -14,21 +14,16 @@ export default async function handler(
     const today = new Date();
 
     await db.collection("wishes").insertOne({
-      wishName: req.body.wishName,
-      wishUrl: req.body.imgUrl,
-      wishLink: req.body.wishLink,
-      date:
-        today.getFullYear() +
-        "-" +
-        (today.getMonth() + 1) +
-        "-" +
-        today.getDate(),
+      name: req.body.name,
+      img: req.body.img,
+      link: req.body.link,
+      category: req.body.category,
     });
 
     res.status(200).json({ ok: true });
   }
 
   if (req.method !== "POST") {
-    res.status(200).json({ ok: false });
+    res.redirect("/");
   }
 }
