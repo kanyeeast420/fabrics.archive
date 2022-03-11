@@ -6,21 +6,12 @@ import Link from "next/link";
 interface Header {}
 
 export const Header: React.FC<Header> = ({}) => {
-  const [itemCount, setItemCount] = useState();
-  useEffect(() => {
-    fetch("/api/fabric-count")
-      .then((res) => res.json())
-      .then((res) => setItemCount(res));
-  });
-
   return (
     <div className="bg-background fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-opacity-20 pr-5 pl-5 backdrop-blur-md">
       <div className="left flex flex-row">
         <Link href={`/`} as={`/`}>
           <a>
-            <span className="text-2xl font-bold">
-              FABRICS.ARCHIVE 🌍 [{itemCount}]
-            </span>
+            <span className="text-2xl font-bold">FABRICS.ARCHIVE 🌍</span>
           </a>
         </Link>
       </div>
@@ -28,8 +19,8 @@ export const Header: React.FC<Header> = ({}) => {
         <Button
           type="button"
           placeholder="API"
-          link="/api/fabrics"
-          target="_blank"
+          link="/api-preview"
+          target="_self"
         ></Button>
         <Button
           placeholder="Add new wish"
@@ -38,7 +29,7 @@ export const Header: React.FC<Header> = ({}) => {
           target="_self"
         ></Button>
         <Button type="button" link="/search" target="_self">
-          <AiOutlineSearch></AiOutlineSearch>
+          <AiOutlineSearch size={15}></AiOutlineSearch>
         </Button>
       </div>
     </div>

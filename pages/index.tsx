@@ -1,20 +1,16 @@
-import Head from "next/head";
-import { Feed } from "../components/Feed";
+import React from "react";
 import { Layout } from "../components/Layout";
 import { Desktop } from "../components/Desktop";
-
+import Head from "next/head";
 
 export default function Home() {
-
-
   return (
     <Layout>
       <Head>
-        <title>Desire.me</title>
+        <title>fabrics.archive</title>
       </Head>
 
       <Desktop />
-      {/* <Feed /> */}
     </Layout>
   );
 }
