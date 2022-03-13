@@ -23,7 +23,7 @@ export const Button: React.FC<Button> = ({
             type={type}
             className="flex flex-row items-center justify-center"
           >
-            <span className="text-xs uppercase">{placeholder}</span>
+            <span className="text-xs font-light uppercase">{placeholder}</span>
             <div>{children}</div>
           </button>
         </a>
