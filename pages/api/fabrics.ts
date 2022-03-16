@@ -8,5 +8,7 @@ export default async function handler(
   const db = await connectToDb();
   const fabrics = await db.collection("wishes").find().toArray();
 
-  res.status(200).json(fabrics);
+  const randomized = fabrics.sort(() => 0.5 - Math.random());
+
+  res.status(200).json(randomized);
 }
