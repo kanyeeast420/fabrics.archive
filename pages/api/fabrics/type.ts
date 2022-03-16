@@ -6,5 +6,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const db = await connectToDb();
-  
+  const category = req.query.category;
+  const items = await db
+    .collection("wishes")
+    .find({
+      category: category,
+    })
+    .toArray();
+
+  res.status(200).json(items);
 }

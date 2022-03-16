@@ -5,7 +5,7 @@ import { Layout } from "../../components/Layout";
 export default function AllItems({}) {
   return (
     <Layout>
-      <Feed></Feed>
+      <Feed url="fabrics"></Feed>
     </Layout>
   );
 }

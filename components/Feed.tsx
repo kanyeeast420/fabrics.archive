@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Fabric } from "./UI/Fabric";
 
-interface Feed {}
+interface Feed {
+  url: string;
+}
 
 interface Fabric {
   _id: string;
@@ -9,30 +11,30 @@ interface Fabric {
   img: string;
   link: string;
   category: string;
+  url: string;
 }
 
-export const Feed: React.FC<Feed> = ({}) => {
+export const Feed: React.FC<Feed> = ({ url }) => {
   const [fabrics, setFabrics] = useState<Fabric[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("/api/fabrics")
+    fetch(`/api/${url}`)
       .then((res) => res.json())
-      .then((res) => setFabrics(res));
-
-    setIsLoading(false);
+      .then((res) => setFabrics(res))
+      .finally(() => setIsLoading(false));
   }, []);
 
   if (isLoading) {
     return (
       <div className="flex h-screen w-full items-center justify-center">
-        <span>Loading...</span>
+        <span className="text-xl">Loading...</span>
       </div>
     );
   }
 
   return (
-    <div className="Feed bg-background">
-      <div className="Feed md:grid w-full grid-cols-1 gap-3 pl-5 pr-5 pt-16 pb-5 flex items-center flex-col">
+    <div className="Feed bg-background h-screen w-full">
+      <div className="Feed bg-background flex w-full grid-cols-1 flex-col items-center gap-3 pl-5 pr-5 pt-16 pb-5 md:grid">
         {fabrics.map((fabric) => (
           <Fabric
             _id={fabric._id}
