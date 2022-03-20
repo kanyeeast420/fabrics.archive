@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#304244",
+        background: "#2239B4",
         text: "#CBCBCB",
       },
     },
     fontFamily: {
-      display: ["SF Pro Display"],
+      display: ["Suisse Intl"],
     },
   },
   plugins: [],

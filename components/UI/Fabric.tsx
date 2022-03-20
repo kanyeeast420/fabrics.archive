@@ -27,7 +27,7 @@ export const Fabric: React.FC<Fabric> = ({
         </Link>
       </div>
       <div className="flex flex-row items-center justify-between">
-        <span>{name}</span>
+        <span className="pr-5">{name}</span>
         <Button
           type="button"
           placeholder="Buy"
