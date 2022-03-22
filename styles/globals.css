@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(https://fonts.googleapis.com/css?family=Modak:regular);
+
 @import url(https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
 
 @font-face {
@@ -16,6 +18,16 @@
   src: url("../public/fonts/SFNSDisplay-Medium.otf") format("opentype");
   font-style: bold;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Modak";
+  src: url(https://fonts.googleapis.com/css?family=Modak:regular);
+  font-display: swap;
+}
+
+.title {
+  font-family: "Modak";
 }
 
 Button {

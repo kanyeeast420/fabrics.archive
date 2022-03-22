@@ -11,7 +11,7 @@ export const Header: React.FC<Header> = ({}) => {
       <div className="left flex flex-row">
         <Link href={`/`} as={`/`}>
           <a>
-            <span className="text-2xl font-bold">FABRICS.ARCHIVE 🌍</span>
+            <span className="text-2xl font-bold">FABRICS.ARCHIVE 🌍 </span>
           </a>
         </Link>
       </div>

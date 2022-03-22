@@ -27,7 +27,7 @@ export const Feed: React.FC<Feed> = ({ url }) => {
   if (isLoading) {
     return (
       <div className="flex h-screen w-full items-center justify-center">
-        <span className="text-xl">Loading...</span>
+        <span className="text-8xl font-Title">555</span>
       </div>
     );
   }

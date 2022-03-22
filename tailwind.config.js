@@ -12,6 +12,7 @@ module.exports = {
     },
     fontFamily: {
       display: ["Suisse Intl"],
+      Title: ["Modak"]
     },
   },
   plugins: [],
